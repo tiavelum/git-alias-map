@@ -1,0 +1,22 @@
+# An invented gitconfig for trying the tool and for its tests. It holds
+# plain aliases, aliases that call aliases, shell aliases, a script, and
+# one rename of a rename for the editor to point out.
+
+[user]
+	name = Example Person
+	email = person@example.com
+
+[alias]
+	co = checkout
+	st = status
+	lg = log --oneline --graph
+	lg10 = lg -10
+	l = lg
+	ll = l
+	pu = push
+	puf = pu --force-with-lease
+	# Undoes the last commit and keeps its changes staged.
+	undo = reset --soft HEAD^
+	u = undo
+	sync = "!git fetch --prune && git st"
+	tidy = !~/bin/git-tidy.sh
