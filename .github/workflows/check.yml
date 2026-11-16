@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  # A replayed repository starts with Actions off, so its open pull requests
+  # get no run until one is started by hand.
+  workflow_dispatch:
 
 jobs:
   check:

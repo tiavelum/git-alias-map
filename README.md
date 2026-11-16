@@ -116,6 +116,14 @@ npm run check
 
 `npx playwright install chromium` downloads the browser the editor test opens, once; with `CHROME_PATH` set to an installed Chrome, the test uses that instead.
 
+To run CI on a branch that got no run, such as an open pull request after the repository was replayed, check the branch out in the clone and start the check on it:
+
+```sh
+gh workflow run check.yml --ref "$(git branch --show-current)"
+```
+
+`gh run list --workflow check.yml` then shows the run.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
